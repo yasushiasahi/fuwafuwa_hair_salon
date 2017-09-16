@@ -1,9 +1,16 @@
 ---
 ---
+
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nicomoji.css);
+
 ////////////////////////////////////////// 変数 ////////
-$yellow: #fcffda;
-$black: #222;
+$cream: #fcffda;
+$black: rgb(40, 40, 40);
 $white: #fdfdfd;
+$pink: rgb(255, 0, 100);
+$yellow: rgb(255, 222, 0);
+$blue: rgb(0, 0, 255);
 
 
 ////////////////////////////////////////// general ////////
@@ -12,14 +19,31 @@ $white: #fdfdfd;
 }
 
 body {
-  background-color: $yellow;
-  background-image: url("/images/hitsuji.png");
   margin: 0;
+  font-family: 'Noto Sans JP';
+}
+
+.main {
+  background-color: $cream;
+  background-image: url("/images/main_background.png");
+  padding-top: 20px;
 }
 
 .container {
   width: 700px;
   margin: 0 auto;
+}
+
+p, li, td {
+  color: $black;
+}
+
+h2 {
+  margin: 0;
+  font-weight: normal;
+  border-left: 4px solid $blue;
+  padding-left: 15px;
+  color: $blue;
 }
 
 
@@ -30,6 +54,9 @@ body {
   background-position: center;
   height: 150px;
   padding-top: 20px;
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
 .logo-bold {
@@ -42,13 +69,17 @@ body {
 }
 
 header {
-  background-color: #f6ff45;
-  margin-bottom: 20px;
+  background-color: $yellow;
+}
+
+.header-container {
+  width: 768px;
+  margin: 0 auto;
 }
 
 .header-list {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 0;
   margin: 0;
@@ -69,68 +100,197 @@ header {
 
 
 ////////////////////////////////////////// TOP ////////
+.top-content-box {
+  float: left;
+  width: 48%;
+  margin-left: 1%;
+  margin-right: 1%;
+  background-color: $white;
+  border-radius: 10px;
+  border: 3px solid $pink;
+  margin-bottom: 20px;
+  a {
+    text-decoration: none;
+    display: block;
+    &:hover {
+      opacity: 0.5;
+    }
+    h3 {
+      margin: 0;
+      padding: 5px 15px 8px 15px;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      font-size: 15px;
+      color: $white;
+      background-color: $pink;
+    }
+    h2 {
+      font-weight: bold;
+      margin: 15px 0px 15px 30px;
+    }
+  }
+}
+
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+////////////////////////////////////////// stylist ////////
+.separater {
+  display: flex;
+  justify-content: space-between;
+}
+
+.aside {
+  width: 18%;
+}
+
+.pege-title {
+  background-color: $yellow;
+  padding: 15px 0;
+  border-radius: 15px;
+  border: 2px solid $black;
+  h1 {
+    font-size: 25px;
+    margin: 0 auto;
+    writing-mode: vertical-rl;
+    color: $black;
+    span {
+      font-size: 35px;
+      color: $blue;
+    }
+  }
+}
+
 .contents {
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: space-between;
+  width: 80%;
 }
 
 .content-box {
-  width: 48%;
-  padding: 5px;
+  display: flex;
+  margin-bottom: 20px;
   background-color: $white;
-  border-radius: 10px;
-  border: 2px solid $black;
-  h1 {
-    font-size: 20px;
-    border-left: 5px solid #00e0ff;
+  box-shadow: #111 1px 1px 5px 0px;
+}
+
+.row-reverse {
+  flex-direction: row-reverse;
+}
+
+.image {
+  width: 45%;
+  img {
+    width: 100%;
   }
 }
 
+ .mb {
+   display: none;
+ }
 
-////////////////////////////////////////// about ////////
-.content {
-  padding: 10px;
-  background-color: $white;
-  border-radius: 10px;
-  border: 2px solid $black;
-}
-
-.cover {
-  background-image: url("/images/inner_salon.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  widows: 100%;
-  height: 300px;
+.article {
+  width: 65%;
   display: flex;
   align-items: center;
-  text-align: center;
-  h1 {
-    color: $white;
-    background-color: rgba(0, 0, 0, 0.5);
-    width: 100%;
-    font-size: 40px;
+  justify-content: center;
+}
+
+  .article-inner {
+    padding-left: 5px;
+  }
+
+.profile {
+  border-collapse: collapse;
+  tr {
+    border-bottom: 0.5px solid $black;
+    padding-top: 20px;
+    height: 40px;
+    vertical-align: bottom;
+    font-size: 15px;
+    th {
+      font-weight: normal;
+      text-align: left;
+      color: $blue;
+      padding-left: 5px;
+    }
+    td {
+      padding-left: 50px;
+      padding-right: 5px;
+    }
   }
 }
 
+.w90 {
+  width: 90%;
+}
 
 
+////////////////////////////////////////// footer ////////
+footer {
+  background-color: $yellow;
+}
 
+.footer-container {
+  width: 768px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 5px;
+}
 
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+g
+.footer-logo {
+  &:hover {
+    opacity: 0.5;
+  }
+}
 
+.footer-list {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style:none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px dotted $black;
+    padding-top: 10px;
+    img {
+      height: 25px;
+    }
+    a {
+      text-decoration: none;
+      color: $black;
+      font-family: "Nico Moji";
+      font-size: 13px;
+      margin: 0 5px;
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
 
-
-
+.copyrights {
+  font-size: 8px;
+  margin: 0;
+}
 
 ///////////////////////////////////////////////////////
-////////////////////////////// min-width:768px ////////
+////////////////////////////// min-width:767px ////////
 ///////////////////////////////////////////////////////
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
   .container {
-    width: 100%;
-    margin: 0;
+    width: 90%;
   }
 
   ////////////////////////// header /////
@@ -142,6 +302,10 @@ header {
   .logo-bold {
     width: 95%;
     height: 50px;
+  }
+
+  .header-container {
+    width: 100%;
   }
 
   .header-list {
@@ -163,30 +327,103 @@ header {
 
 
   ////////////////////////// TOP /////
-  .contents {
-    width: 90%;
+  .top-contents {
     margin: 0 auto;
     flex-direction: column;
   }
 
-  .content-box {
+  .top-content-box {
     width: 100%;
     margin-bottom: 20px;
   }
 
-  ////////////////////////// ABOUT /////
-  .content {
-    width: 90%;
-    margin: 0 auto;
+
+  ////////////////////////// stylist /////
+  .separater {
+    flex-direction: column;
   }
 
-  .cover {
-    height: 200px;
-    align-items: baseline;
+  .aside {
+    width: 100%;
+  }
+
+  .pege-title {
+    text-align: center;
+    margin-bottom: 20px;
     h1 {
-      font-size: 30px;
+      writing-mode: horizontal-tb;
+      font-size: 20px;
+      span {
+        display: block;
+      }
     }
   }
+
+  .contents {
+    width: 100%;
+  }
+
+  .content-box {
+    flex-direction: column;
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  .pc {
+    display: none;
+  }
+
+  .mb {
+    display: block;
+  }
+
+  .article {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+
+  ////////////////////////// footer /////
+  .footer-container {
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  .footer-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-list {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+
+    li {
+      width: 25%;
+      border: 2px dotted $black;
+      border-right: none;
+      display: block;
+      padding: 0;
+      &:last-child {
+        border-right: 2px dotted $black;
+      }
+      img {
+        display: none;
+      }
+      a {
+        display: block;
+        line-height: 28px;
+      }
+    }
+  }
+
+
+
+
 
 }
 
